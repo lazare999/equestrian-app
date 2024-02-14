@@ -1,0 +1,89 @@
+.container {
+  position: relative;
+  width: 25rem;
+  height: fit-content;
+  margin: 1rem;
+  border: 2px solid gray;
+  border-radius: 10px;
+  background-color: #d4d6d1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(94, 93, 93, 0);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container:hover::before {
+  content: "Click for details";
+  background-color: rgba(94, 93, 93, 0.5);
+  backdrop-filter: blur(1px);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.date {
+  text-align: center;
+}
+
+hr {
+  width: auto;
+  height: 0;
+  margin: 0;
+}
+
+.title {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.3rem 1rem;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #9fa19c;
+}
+
+.imgAndDetails {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 170px;
+}
+
+.img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10px;
+}
+
+.imgAndDetails p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+  margin: 1rem;
+}
+
+.containerFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.containerFooter h1 {
+  margin: 0 8px; /* Adjust the margin as needed */
+  font-size: 1.2em;
+  line-height: 0;
+}
+
+.containerFooter p {
+  margin: 0;
+}

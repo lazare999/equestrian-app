@@ -1,0 +1,165 @@
+.signInForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* background-color: rgb(255, 252, 247); */
+    /* box-shadow: 0 0 10px rgba(190, 84, 84, 0.5); 
+    border-radius: 10px; */
+    text-align: center;
+    overflow: hidden;
+}
+
+.logInHeader {
+    color: RGB(93 129 177);
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+.form {
+    background-color: rgb(255,255,255);
+    box-shadow: 0 0 10px rgba(37, 35, 35, 0.5);
+    border-radius: 10px;
+    height: fit-content;
+    width: 90vh;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: flex-start;
+    margin-top: 3vh;
+}
+
+/* input[type='email'],
+input[type='password'],
+input[type='text'] {
+    width: 70%;
+    height: 3.5vh;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 1.2rem;
+    border: 2px solid RGB(93 129 177);
+} */
+
+.inputs {
+    width: 70%;
+    height: 3.5vh;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 1.2rem;
+    border: 2px solid RGB(93 129 177);
+}
+
+.invalidInputs {
+    width: 70%;
+    height: 3.5vh;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 1.2rem;
+    border: 2px solid red;
+    background-color: rgb(255, 228, 228);
+}
+
+input[type='email']::placeholder,
+input[type='password']::placeholder,
+input[type='text']::placeholder {
+    color: RGB(93 129 177);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: RGB(93 129 177);
+}
+
+.errorMessage {
+    color: red;
+    margin-left: 1.4rem;
+}
+
+.button {
+    width: 73%;
+    height: 5.5vh;
+    margin-bottom: 29px;
+    border-radius: 8px;
+    border: 2px solid RGB(93 129 177);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: RGB(93 129 177);
+    color: white;
+}
+
+.button:hover {
+    background-color: RGB(93 129 177);
+}
+
+
+.homePageHeader {
+    color: RGB(93 129 177);
+    background-color: rgb(252, 243, 243);
+    border-radius: 50px;
+    padding: 2vh;
+    margin: 4vh;
+    text-align: center;
+    /* position: absolute; */
+    height: auto;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 7.2vh;
+    height: 7vh;
+}
+
+.background {
+    background-image: url('https://garden.spoonflower.com/c/1825676/p/f/m/5WqeEZzTZiJnR30LdlaHMu9M9Xay0HBG7b_LnJZYxoNH_ItkRJ0/Delft%20Jumpers.jpg');
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.error{
+    color: red;
+}
+
+.redirectInSingUp {
+    margin: 1rem;
+}
+
+.link {
+    color: RGB(93 129 177);
+    font-weight: bold;
+}
+
+@media  screen and (max-width: 700px) {
+    .form {
+        width: 50vh;
+    }
+    label {
+        flex-direction: column;
+    }
+    .formContainer {
+        align-items: center
+    }
+}

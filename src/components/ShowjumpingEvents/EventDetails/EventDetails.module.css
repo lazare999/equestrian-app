@@ -1,0 +1,108 @@
+.imgAndDetailContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #97b175;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.img {
+  width: 500px;
+  height: 500px;
+  margin: 20px;
+  background-color: #8da766;
+  border-radius: 10px;
+  box-shadow: 20px 14px 15px 9px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.title h1 {
+  margin: 0;
+  padding: 10px;
+  color: #4f4b4b;
+  background-color: #8da766;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: x-large;
+}
+
+.nameAndImg {
+  display: flex;
+}
+
+.nameAndImg p {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  background-color: #8da766;
+  border-radius: 10px;
+  box-shadow: 20px 14px 15px 9px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  font-size: xx-large;
+  font-weight: 500;
+  color: #4f4b4b;
+}
+
+.nameAndDetails h1 {
+  font-weight: bold;
+}
+
+/* .details {
+  display: flex;
+  justify-content: space-around;
+  width: -webkit-fill-available;
+  font-weight: bold;
+  font-size: x-large;
+  color: #646464;
+} */
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: x-large;
+  color: #646464;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+@font-face {
+  font-family: Muybridge;
+  src: url(https://www.lorp.org/fonts/MuybridgeGX.woff2);
+}
+
+@keyframes Gallop {
+  from {
+    font-variation-settings: "TIME" 0;
+  }
+  to {
+    font-variation-settings: "TIME" 15;
+  }
+}
+
+.fontAnimationContainer p {
+  font: 120px Muybridge;
+  animation: 0.6s linear infinite Gallop;
+  width: 200px;
+}
+
+.fontAnimationContainer:hover p {
+  animation-duration: 6s;
+  width: 200px;
+}

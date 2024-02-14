@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: 	#89947b;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem;
+    border-radius: 50%;
+}
+
+.category {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #d4d6d1;
+}
+
+.profileIcon {
+    margin: 1.5rem;
+    cursor: pointer;
+}
