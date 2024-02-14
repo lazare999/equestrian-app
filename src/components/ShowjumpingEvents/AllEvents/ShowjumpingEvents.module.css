@@ -5,7 +5,7 @@
   margin: 1rem;
   border: 2px solid gray;
   border-radius: 10px;
-  background-color: #97b175;
+  background-color: #72a6ab;
   color: papayawhip;
   overflow: hidden;
   cursor: pointer;
@@ -35,7 +35,7 @@
 
 .date {
   text-align: center;
-  background-color: #97b175; /* Green background color */
+  background-color: #72a6ab; /* Green background color */
   color: papayawhip; /* White text color */
   margin: 0;
 }
@@ -66,7 +66,7 @@ hr {
   margin: 0 auto;
   padding: 0.3rem 1rem;
   border-radius: 0px 0px 10px 10px;
-  background-color: #77914f;
+  background-color: #669b92;
 }
 
 .imgAndDetails {

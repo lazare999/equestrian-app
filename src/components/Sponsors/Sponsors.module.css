@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #bdbdbd;
+  background-color: #72a6ab;
   border-radius: 185px;
   width: 300px;
   height: 300px;
@@ -20,7 +20,7 @@
 }
 
 .container:hover {
-  background-color: #cccbcb;
+  background-color: #81afb3;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
