@@ -1,16 +1,24 @@
 import React, { useState, useRef } from "react";
 import SelectComponent from "./Select/Index";
 import classes from "./AddParticipants.module.css";
-import athleteIcon from "../../../../Images/Icons/jockey.png";
-import horseIcon from "../../../../Images/Icons/equestrian.png";
-import lisiLake from "../../../../Images/ClubLogos/Lisi-lake.jpg";
-import menes from "../../../../Images/ClubLogos/menes.jpg";
-import kachreti from "../../../../Images/ClubLogos/kachreti.jpg";
+// import athleteIcon from "../../../../../public/Images/Icons/jockey.png";
+// import horseIcon from "/Images/Icons/equestrian.png";
+// import lisiLake from "/Images/ClubLogos/Lisi-lake.jpg";
+// import menes from "/Images/ClubLogos/menes.jpg";
+// import kachreti from "/Images/ClubLogos/kachreti.jpg";
+
+const iconsPaths = {
+  athleteIcon: "/Images/Icons/jockey.png",
+  horseIcon: "/Images/Icons/equestrian.png",
+  lisiLake: "/Images/ClubLogos/lisi-lake.jpg",
+  menes: "/Images/ClubLogos/menes.jpg",
+  kachreti: "/Images/ClubLogos/kachreti.jpg",
+};
 
 const clubIcons = {
-  "Lisi lake": lisiLake,
-  Menes: menes,
-  "Kachretis ambasadori": kachreti,
+  "Lisi lake": iconsPaths.lisiLake,
+  Menes: iconsPaths.menes,
+  "Kachretis ambasadori": iconsPaths.kachreti,
 };
 
 const AddParticipants = ({ onUpdateParticipants }) => {
@@ -139,7 +147,7 @@ const AddParticipants = ({ onUpdateParticipants }) => {
               <p>{index + 1}.</p>
               <div className={classes.participantRider}>
                 <img
-                  src={athleteIcon}
+                  src={iconsPaths.athleteIcon}
                   alt="Rider icon"
                   className={classes.icon}
                 />
@@ -147,7 +155,7 @@ const AddParticipants = ({ onUpdateParticipants }) => {
               </div>
               <div className={classes.participantHorse}>
                 <img
-                  src={horseIcon}
+                  src={iconsPaths.horseIcon}
                   alt="Horse icon"
                   className={classes.icon}
                 />

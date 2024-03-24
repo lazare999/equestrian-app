@@ -1,39 +1,21 @@
-import React, { useRef, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
 import { useMemo } from "react";
 import {
   MaterialReactTable,
   useMaterialReactTable,
 } from "material-react-table";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
+
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
 
 import classes from "./EventDetails.module.css";
 
 const EventDetails = ({ eventData }) => {
-  const { eventId } = useParams();
-  console.log(eventId);
-  console.log(eventData);
-
-  const container = useRef();
   const titleContainer = useRef();
-  const { contextSafe } = useGSAP({
-    scope: container,
-    titleContainer,
-  });
-  const onClickGood = contextSafe(() => {
-    // Horse animation
-    gsap.fromTo(
-      titleContainer.current,
-      { x: -300, opacity: 0 }, // Set initial position to the left
-      {
-        x: 0, // Move to the original position
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.out", // You can change the easing function
-      }
-    );
-  });
+  const [isFullScreenOpen, setIsFullScreenOpen] = useState(false);
 
   useEffect(() => {
     const animationTimeline = gsap.timeline();
@@ -55,7 +37,6 @@ const EventDetails = ({ eventData }) => {
 
   // Extract participant data from eventData
   const participantsData = eventData?.event_participants || [];
-  console.log(participantsData);
 
   // Define columns for the MaterialReactTable
   const columns = useMemo(
@@ -94,11 +75,33 @@ const EventDetails = ({ eventData }) => {
     return <div>Loading...</div>;
   }
 
+  let eventFormat = "";
+  let eventType = "";
+  if (eventData.event_category === "showjumping") {
+    eventFormat = "სმ.";
+    eventType = "ბარიერების სიმაღლე";
+  }
+  if (eventData.event_category === "horse_race") {
+    eventFormat = "მ.";
+    eventType = "გარბენის მანძილი";
+  }
+
+  console.log(eventData.event_category);
+
+  const openFullScreen = () => {
+    setIsFullScreenOpen(true);
+  };
+
+  const closeFullScreen = () => {
+    setIsFullScreenOpen(false);
+  };
+
+  // console.log(eventFormat);
   return (
     <div>
-      <div className={classes.fontAnimationContainer}></div>
+      {/* <div className={classes.fontAnimationContainer}></div> */}
       <div className={classes.imgAndDetailContainer}>
-        <div className={classes.title} ref={titleContainer}>
+        <div className={classes.title}>
           <h1 ref={titleContainer}>{eventData.event_name}</h1>
         </div>
         <div className={classes.nameAndImg}>
@@ -107,13 +110,18 @@ const EventDetails = ({ eventData }) => {
             alt="event cover"
             className={classes.img}
           />
-          <p>{eventData.event_details}</p>
+          <p>
+            {eventData.event_details}
+            <FontAwesomeIcon className={classes.fullScreen} icon={faExpand} onClick={openFullScreen} />
+          </p>
         </div>
         <table>
           <tr>
-            <td>ბარიერების სიმაღლე:</td>
-            <td>დასაწყისი:</td>
-            <td>დასწრება:</td>
+            <td>
+              {eventType}: {eventData.event_obstacle} {eventFormat}
+            </td>
+            <td>დასაწყისი: {eventData.event_time} სთ.</td>
+            <td>დასწრება: {eventData.event_entry}</td>
           </tr>
         </table>
       </div>
@@ -124,6 +132,12 @@ const EventDetails = ({ eventData }) => {
       <div className={classes.fontAnimationContainer}>
         <p className={classes.animatedText}>🐎</p>
       </div>
+      <Modal open={isFullScreenOpen} onClose={closeFullScreen}>
+        <div className={classes.fullScreenContent}>
+          <h2>Full Screen Event Details</h2>
+          <p>{eventData.event_details}</p>
+        </div>
+      </Modal>
     </div>
   );
 };

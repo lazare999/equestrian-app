@@ -1,50 +1,75 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import Header from "../../components/Header/Index";
-import EventDetails from "../../components/ShowjumpingEvents/EventDetails/Index";
+import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { format } from "date-fns";
+
+import useFetchEvents from "../../utils/useFetchEvents.js/Index";
+
+// import EventDetails from "../../components/ShowjumpingEvents/EventDetails/Index";
+import EventsCover from "../../components/ShowjumpingEvents/EventsCover/Index";
 
 import classes from "./Showjumping.module.css";
 
 const Showjumping = () => {
-  const [events, setEvents] = useState([]);
-  const [eventDetailsId, setEventDetailsId] = useState(null);
+  // const [events, setEvents] = useState([]);
+  // const [eventDetailsId, setEventDetailsId] = useState(null);
 
+  // const navigate = useNavigate();
+  // console.log(eventType);
+
+  // // const events = useFetchEvents();
+  // const events = useFetchEvents(eventType);
+  // console.log(events);
+
+  // const [eventDetailsId, setEventDetailsId] = useState(null);
   const navigate = useNavigate();
+  const { state } = useLocation();
+  console.log("Location state:", state);
+  const eventType = state?.eventType || "showjumping";
+  const events = useFetchEvents(eventType);
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch(
-          "https://equestrian-app-e534c-default-rtdb.firebaseio.com/events.json"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch events");
-        }
-        const data = await response.json();
-        if (data) {
-          const eventIds = Object.keys(data);
-          console.log("Event IDs:", eventIds);
+  console.log(eventType);
 
-          const eventArray = Object.entries(data).map(
-            ([eventId, eventData]) => ({
-              ...eventData,
-              id: eventId,
-            })
-          );
-          eventArray.sort(
-            (a, b) => new Date(a.event_date) - new Date(b.event_date)
-          );
-          setEvents(eventArray);
-        }
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-      }
-    };
+  let eventCategory = "";
 
-    fetchEvents();
-  }, []);
+  if (eventType === "showjumping") {
+    eventCategory = "Showjumping Events";
+  } else {
+    eventCategory = "Horse Race Events";
+  }
+
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://equestrian-app-e534c-default-rtdb.firebaseio.com/events.json"
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch events");
+  //       }
+  //       const data = await response.json();
+  //       if (data) {
+  //         const eventIds = Object.keys(data);
+  //         console.log("Event IDs:", eventIds);
+
+  //         const eventArray = Object.entries(data).map(
+  //           ([eventId, eventData]) => ({
+  //             ...eventData,
+  //             id: eventId,
+  //           })
+  //         );
+  //         eventArray.sort(
+  //           (a, b) => new Date(a.event_date) - new Date(b.event_date)
+  //         );
+  //         setEvents(eventArray);
+  //       }
+  //       console.log(data);
+  //     } catch (error) {
+  //       console.error("Error fetching events:", error);
+  //     }
+  //   };
+
+  //   fetchEvents();
+  // }, []);
 
   const formatDateString = (originalDateString) => {
     const dateObject = new Date(originalDateString);
@@ -56,51 +81,25 @@ const Showjumping = () => {
   };
 
   const handleContainerClick = (eventId) => {
-    setEventDetailsId(eventId);
+    // setEventDetailsId(eventId);
     navigate(`/event-detail/${eventId}`);
     console.log("Clicked on event with ID:", eventId);
   };
 
   return (
     <div>
-      <Header />
-      <h1>Showjumping Events</h1>
+      <h1>{eventCategory}</h1>
       <div className={classes.showjumpingContainer}>
-        {events.map((event, index) => {
-          const { day, month, year } = formatDateString(event.event_date);
-          return (
-            <div
-              key={index}
-              className={classes.container}
-              onClick={() => handleContainerClick(event.id)}
-            >
-              {/* Format the date using the formatDateString function */}
-              <p className={classes.date}>
-                <span className={classes.day}>{day}</span>
-                <span className={classes.month}>{month}</span>
-                <span className={classes.year}>{year}</span>
-              </p>
-              <hr />
-              <h3 className={classes.title}>{event.event_name}</h3>
-              <div className={classes.imgAndDetails}>
-                <img
-                  src={event.event_image}
-                  className={classes.img}
-                  alt="Event img"
-                />
-                <p className={classes.details}>{event.event_details}</p>
-              </div>
-              <hr />
-              <div className={classes.containerFooter}>
-                <p>START: {event.event_time}</p>
-                <h1>/</h1>
-                <p>Entry Free!</p>
-              </div>
-            </div>
-          );
-        })}
+        {events.map((event, index) => (
+          <EventsCover
+            key={index}
+            event={event}
+            handleContainerClick={handleContainerClick}
+            formatDateString={formatDateString}
+          />
+        ))}
       </div>
-      {eventDetailsId && <EventDetails eventId={eventDetailsId} />}
+      {/* {eventDetailsId && <EventDetails eventId={eventDetailsId} />} */}
     </div>
   );
 };

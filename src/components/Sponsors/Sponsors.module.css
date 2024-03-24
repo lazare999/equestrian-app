@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px 0;
 }
 
 .container {
@@ -9,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #bdbdbd;
+  background-color: #8b9184;
   border-radius: 185px;
   width: 300px;
   height: 300px;
@@ -20,7 +21,7 @@
 }
 
 .container:hover {
-  background-color: #cccbcb;
+  background-color: #91968c;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
@@ -34,4 +35,21 @@
 .container h3 {
   width: 300px;
   text-align: center;
+}
+
+@media (max-width: 700px) {
+  .mainContainer {
+    margin-bottom: 3rem;
+  }
+  .container {
+    width: 230px;
+    height: 230px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: medium;
+  }
+  .container h3 {
+    width: 200px;
+    font-size: medium;
+  }
 }

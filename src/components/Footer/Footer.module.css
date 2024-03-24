@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #89947b;
+  color: #d4d6d1;
+}
+
+a {
+  color: #d4d6d1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 370px) {
+  .footer {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+  }
+}

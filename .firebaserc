@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "portfolio": "equestrian-app-e534c",
+    "default": "equestrian-app-e534c",
+    "equestrian-app": "equestrian-app-e534c"
+  },
+  "targets": {},
+  "etags": {}
+}

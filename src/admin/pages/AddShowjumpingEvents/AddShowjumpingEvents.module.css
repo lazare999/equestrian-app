@@ -1,87 +1,15 @@
-.container {
-  /* margin: 20px; */
-  padding: 20px;
-  background-image: url("https://garden.spoonflower.com/c/1825676/p/f/m/5WqeEZzTZiJnR30LdlaHMu9M9Xay0HBG7b_LnJZYxoNH_ItkRJ0/Delft%20Jumpers.jpg");
-  /* background-size: cover;
-    background-repeat: no-repeat; */
-  background-attachment: fixed;
-  background-position: center;
-}
-
 .formContainer {
   display: flex;
+  align-items: center;
   justify-content: space-around;
-}
-
-.enteringForm {
   padding: 1rem;
   background-color: #ffffff;
   border: 2px solid RGB(93 129 177);
   border-radius: 10px;
 }
 
-.enteringForm h1 {
-  color: RGB(93 129 177);
-}
-
-.enteredForm {
-  width: 30rem;
-  height: fit-content;
-  padding: 0 15px 0 15px;
-  background-color: rgb(255, 255, 255);
-  border: 2px solid RGB(93 129 177);
-  border-radius: 10px;
-}
-
-.nameInput {
-  /* width: fit-content; */
-  height: 3.5vh;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 8px 0;
-  font-size: 1.2rem;
-  border: 2px solid RGB(93 129 177);
-}
-
-.detailsInput {
-  width: fit-content;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 8px 0;
-  font-size: 1.2rem;
-  border: 2px solid RGB(93 129 177);
-}
-
-.detailsContainer {
-  margin-left: 2em;
-}
-
-.DateInput {
-  width: 200px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.radioInputs {
-  display: flex;
-  margin: 5px 0 5px 0;
-}
-
-.radioNo {
-  margin-left: 2rem;
-}
-
-.img {
-  margin: 8px 0;
-  width: 200px;
-}
-
-.addImgIcon {
-  margin: 8px 0;
-  width: 9em;
-}
-
-.imgAndDetailsContainer {
-  display: flex;
+.uploadButton {
+  text-align: center;
+  width: -webkit-fill-available;
+  margin: 40px 466px;
 }

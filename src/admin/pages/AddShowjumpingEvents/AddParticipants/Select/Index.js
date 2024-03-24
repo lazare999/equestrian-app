@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
-import lisiLake from "../../../../../Images/ClubLogos/Lisi-lake.jpg";
-import Menes from "../../../../../Images/ClubLogos/menes.jpg";
-import kachreti from "../../../../../Images/ClubLogos/kachreti.jpg";
+// import lisiLake from "Images/ClubLogos/Lisi-lake.jpg";
+// import Menes from "Images/ClubLogos/menes.jpg";
+// import kachreti from "Images/ClubLogos/kachreti.jpg";
 import classes from "./SelectComponent.module.css";
 
 const CustomOption = ({ innerProps, label, data }) => (
@@ -21,6 +21,9 @@ const CustomValue = ({ innerProps, data }) => (
 
 const SelectComponent = ({ value, onChange, options }) => {
   const [selectedValue, setSelectedValue] = useState(value);
+  const lisiLake = process.env.PUBLIC_URL + "/Images/ClubLogos/Lisi-lake.jpg";
+  const Menes = process.env.PUBLIC_URL + "/Images/ClubLogos/menes.jpg";
+  const kachreti = process.env.PUBLIC_URL + "/Images/ClubLogos/kachreti.jpg";
 
   useEffect(() => {
     setSelectedValue(value);

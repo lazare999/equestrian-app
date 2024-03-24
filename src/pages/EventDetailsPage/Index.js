@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import EventDetails from "../../components/ShowjumpingEvents/EventDetails/Index";
-import Header from "../../components/Header/Index";
 import Sponsors from "../../components/Sponsors/Index";
+import { useFetchEventDetails } from "../../utils/useFetchEvents.js/Index";
 
 import classes from "./EventDetailsPage.module.css";
 
@@ -10,33 +11,21 @@ const EventDetailsPage = () => {
   const { eventId } = useParams();
   const [event, setEvent] = useState(null);
 
+  // Use useFetchEventDetails hook to fetch event details for showjumping events
+  const showjumpingEvent = useFetchEventDetails(eventId, "showjumping");
+
+  // Use useFetchEventDetails hook to fetch event details for horse racing events
+  const horseRaceEvent = useFetchEventDetails(eventId, "horse_race");
+
+  // Determine which event type to use based on your application logic
+  const selectedEvent = showjumpingEvent || horseRaceEvent;
+
   useEffect(() => {
-    const fetchEventDetails = async () => {
-      try {
-        const response = await fetch(
-          `https://equestrian-app-e534c-default-rtdb.firebaseio.com/events/${eventId}.json`
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch event details");
-        }
-
-        const eventData = await response.json();
-        if (eventData) {
-          setEvent(eventData);
-        }
-        console.log(eventData);
-      } catch (error) {
-        console.error("Error fetching event details:", error);
-      }
-    };
-
-    fetchEventDetails();
-  }, [eventId]);
+    setEvent(selectedEvent);
+  }, [selectedEvent]);
 
   return (
     <div className={classes.container}>
-      <Header />
       <h1>დეტალები შეჯიბრზე</h1>
       <EventDetails eventData={event} />
       <div className={classes.sponsorsContainer}>

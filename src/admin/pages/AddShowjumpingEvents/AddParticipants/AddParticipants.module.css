@@ -51,13 +51,13 @@
 
 .athleteInput {
   padding-left: 25px;
-  background: url("../../../../Images/Icons/user.svg") no-repeat left;
+  background: url("/public/Images/Icons/user.svg") no-repeat left;
   background-size: 25px;
 }
 
 .horseInput {
   padding-left: 25px;
-  background: url("../../../../Images/Icons/horse.svg") no-repeat left;
+  background: url("/public/Images/Icons/horse.svg") no-repeat left;
   background-size: 25px;
 }
 

@@ -1,4 +1,4 @@
-.container {
+/* .container {
   position: relative;
   width: 25rem;
   height: fit-content;
@@ -79,11 +79,27 @@ hr {
 }
 
 .containerFooter h1 {
-  margin: 0 8px; /* Adjust the margin as needed */
+  margin: 0 8px;
   font-size: 1.2em;
   line-height: 0;
 }
 
 .containerFooter p {
   margin: 0;
+} */
+
+.eventsContainer {
+  background-color: white;
+  box-shadow: 9px 10px 15px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.title {
+  text-align: center;
+}
+
+.sponsorsTitle {
+  text-align: center;
 }
