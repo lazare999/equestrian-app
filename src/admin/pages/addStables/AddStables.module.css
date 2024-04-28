@@ -1,0 +1,26 @@
+.inputs {
+  background-color: #fff;
+  width: max-content;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid RGB(93 129 177);
+}
+
+.inputs input {
+  height: 3.5vh;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 1.2rem;
+  border: 2px solid RGB(93 129 177);
+}
+
+.inputs textarea {
+  width: fit-content;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 1.2rem;
+  border: 2px solid RGB(93 129 177);
+}

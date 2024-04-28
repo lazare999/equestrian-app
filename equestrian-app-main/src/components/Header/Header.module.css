@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #89947b;
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+  border-radius: 50%;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #d4d6d1;
+}
+
+.category p {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.navLink {
+  padding: 10px;
+  text-decoration: none;
+  color: #d4d6d1;
+}
+
+.navLink:hover {
+  color: #fff;
+  background-color: #656d5a;
+  border-radius: 15px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.activeNavLink {
+  color: #fff;
+  background-color: #656d5a;
+  border-radius: 15px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.profileIcon {
+  margin: 1.5rem;
+  cursor: pointer;
+}
+
+.burgerIcon {
+  display: none; /* Hide the burger icon by default for larger screens */
+  cursor: pointer;
+}
+
+.category.showMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 111px; /* Adjust as needed */
+  left: 0;
+  width: 100%;
+  background-color: #89947b;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .burgerIcon {
+    display: block; /* Show the burger icon for screens 768px and below */
+    margin: 1.5rem;
+  }
+
+  .category {
+    display: none; /* Hide the navigation links for small screens by default */
+  }
+}

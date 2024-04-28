@@ -1,0 +1,15 @@
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 2px solid RGB(93 129 177);
+  border-radius: 10px;
+}
+
+.uploadButton {
+  text-align: center;
+  width: -webkit-fill-available;
+  margin: 40px 466px;
+}

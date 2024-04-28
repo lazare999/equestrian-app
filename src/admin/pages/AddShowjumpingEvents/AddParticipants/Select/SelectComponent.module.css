@@ -1,0 +1,47 @@
+/* SelectComponent.module.css */
+
+/* Add your custom styles here */
+.customSelect {
+  width: max-content; /* Set the width according to your design */
+}
+
+.customValue {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.customOption {
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.customOption:hover {
+  background-color: #c5e0ec; /* Change the background color on hover */
+}
+
+.customOption img,
+.customValue img {
+  width: 40px; /* Adjust the width of the icon */
+  height: 40px; /* Adjust the height of the icon */
+  margin-right: 8px; /* Add some spacing between the icon and label */
+  cursor: pointer;
+}
+
+.customValue img {
+  width: 40px; /* Adjust the width of the icon */
+  height: 40px; /* Adjust the height of the icon */
+  margin-right: 8px; /* Add some spacing between the icon and label */
+}
+
+.custom-value:hover {
+  background-color: #e6f7ff; /* Change the background color on hover for the selected value */
+}
+
+.custom-value {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+}

@@ -1,0 +1,12 @@
+.container h1 {
+  text-align: center;
+  /* margin: 20px; */
+}
+
+.sponsorsContainer {
+  margin: 20px;
+}
+
+.sponsorsContainer h1 {
+  font-size: 50px;
+}

@@ -1,0 +1,155 @@
+.container {
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 2px solid RGB(93 129 177);
+  border-radius: 10px;
+}
+
+.participantSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.inputContainer {
+  /* position: relative;
+  line-height: 14px;
+  margin: 0 10px;
+  display: inline-block; */
+  display: flex;
+}
+
+.inputContainer label {
+  color: #bbb;
+  font-size: 11px;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  top: 14px;
+  padding: 0 2px;
+  pointer-events: none;
+  background: white;
+  transition: transform 100ms ease;
+  transform: translateY(-20px);
+}
+
+.inputContainer input {
+  font-size: 23px;
+  color: #555;
+  outline: none;
+  border: 5px solid #bbb;
+  padding: 15px 29px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.athleteInput {
+  padding-left: 25px;
+  background: url("/public/Images/Icons/user.svg") no-repeat left;
+  background-size: 25px;
+}
+
+.horseInput {
+  padding-left: 25px;
+  background: url("/public/Images/Icons/horse.svg") no-repeat left;
+  background-size: 25px;
+}
+
+.inputContainer input:invalid + label {
+  transform: translateY(0);
+}
+
+.inputContainer input::placeholder {
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.inputContainer input:focus {
+  border-color: #2b96f1;
+}
+
+.inputContainer input:focus + label {
+  color: #2b96f1;
+  transform: translateY(-20px);
+}
+
+.listContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listItems {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.participantRider {
+  display: flex;
+  align-items: center;
+  color: #555;
+  background: #d4d4d4;
+  outline: none;
+  border: 5px solid #bbb;
+  border-radius: 20px;
+  width: 200px;
+  height: 60px;
+}
+
+.participantHorse {
+  display: flex;
+  align-items: center;
+  color: #555;
+  background: #d4d4d4;
+  outline: none;
+  border: 5px solid #bbb;
+  border-radius: 20px;
+  width: 200px;
+  height: 60px;
+}
+
+.participantClub {
+  display: flex;
+  align-items: center;
+}
+
+.participantClub img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.button {
+  display: inline-block;
+  margin-right: 10px;
+  background: #339dff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 38px;
+  border-radius: 50px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 170px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #fff;
+  color: #339dff;
+  box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
+}
+
+.participantsDiv {
+  display: flex;
+}
